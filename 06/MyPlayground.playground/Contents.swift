@@ -1,29 +1,16 @@
 import UIKit
 
-class Car {
-    var distance = 0
-    func stop() {
-        print("止まりました")
+class Cat {
+    func run() {
+        print("走る")
     }
 }
 
-class SportsCar: Car {
-    func drive() {
-        distance += 10
+class Cheetah: Cat {
+    override func run() {
+        print("時速100km/hで走る")
     }
 }
 
-class Truck: Car {
-    func drive() {
-        distance += 5
-    }
-}
-
-var sportsCar = SportsCar()
-var truck    = Truck()
-
-sportsCar.drive()
-truck.drive()
-
-sportsCar.stop()
-truck.stop()
+var cheetah = Cheetah()
+cheetah.run()
