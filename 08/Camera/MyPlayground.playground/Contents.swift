@@ -1,15 +1,9 @@
 import UIKit
 
-class Lawer {
-    func defend() {
-        print("異議あり！")
-    }
-}
+class Animal{}
+class Mammal:Animal{}
+class Dog:Mammal{}
+class Cat:Mammal{}
 
-class Defender {
-    var delegate:Lawer?
-}
-
-let taro = Defender()
-taro.delegate = Lawer()
-taro.delegate!.defend()
+var mammals:[Mammal] = [Dog(), Cat()]
+var dog:Dog = mammals[0] as! Dog

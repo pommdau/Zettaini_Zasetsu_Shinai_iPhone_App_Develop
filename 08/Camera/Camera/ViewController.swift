@@ -16,7 +16,7 @@ class ViewController: UIViewController,
     
     // カメラボタンがタップされた際の処理
     @IBAction func launchCamera(_ sender: UIBarButtonItem) {
-        // 画像の取得方法を、定数cameraに代入
+        // 画像の取得方法を指定し、定数へに代入
         let camera = UIImagePickerController.SourceType.camera
         
         // カメラ機能が使用可能かどうか
