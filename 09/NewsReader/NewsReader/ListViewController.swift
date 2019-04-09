@@ -85,4 +85,14 @@ class ListViewController: UITableViewController, XMLParserDelegate {
         self.tableView.reloadData()
     }
     
+    // 画面遷移
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let item = items[indexPath.row]
+            let controller = segue.destination as! DetailViewController     // 遷移先のビューコントローラを格納
+            controller.title = item.title   // デフォルトで持つproperty?
+            controller.link = item.link
+        }
+    }
+    
 }

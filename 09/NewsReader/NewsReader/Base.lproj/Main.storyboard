@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLZ-VV-ipP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5z-Gu-h6B">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--List View Controller-->
+        <!--一覧-->
         <scene sceneID="EEm-Aw-qNY">
             <objects>
                 <tableViewController id="cLZ-VV-ipP" customClass="ListViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,6 +49,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tdq-ix-bdE" kind="show" id="pFR-ly-2Ka"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,10 +59,63 @@
                             <outlet property="delegate" destination="cLZ-VV-ipP" id="hhQ-D5-WKh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="一覧" id="wLo-jd-c5R"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7J-j6-xqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="134"/>
+            <point key="canvasLocation" x="2322.4000000000001" y="123.39901477832512"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eOo-FG-g4x">
+            <objects>
+                <viewController id="tdq-ix-bdE" customClass="DetailViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kj3-EJ-eQR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZb-9G-TOU">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OZb-9G-TOU" secondAttribute="bottom" id="8lQ-gr-JI0"/>
+                            <constraint firstAttribute="trailing" secondItem="OZb-9G-TOU" secondAttribute="trailing" id="EOc-U0-gmA"/>
+                            <constraint firstItem="OZb-9G-TOU" firstAttribute="top" secondItem="exu-CR-axc" secondAttribute="top" id="KLF-wt-NHB"/>
+                            <constraint firstItem="OZb-9G-TOU" firstAttribute="leading" secondItem="kj3-EJ-eQR" secondAttribute="leading" id="zXU-Vx-AQu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="exu-CR-axc"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="OZb-9G-TOU" id="3gA-h8-v2r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saC-qh-JU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3165.5999999999999" y="122.66009852216749"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8xh-xo-Mlu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P5z-Gu-h6B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3IM-4H-Jay">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cLZ-VV-ipP" kind="relationship" relationship="rootViewController" id="B7W-fr-54K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psP-cw-hYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="123"/>
         </scene>
     </scenes>
 </document>
