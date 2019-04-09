@@ -1,7 +1,7 @@
 import UIKit
 
-func areaOfTriangle(withBase base:Int, height:Int) {
-    print (base * height / 2)
-}
+var slider = UISlider()
 
-areaOfTriangle(withBase: 3, height: 4)
+slider.value = 1.0
+
+slider.setValue(0.5, animated: true)
