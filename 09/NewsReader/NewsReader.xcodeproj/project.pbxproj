@@ -11,6 +11,7 @@
 		D01A8B8E2256F35B00F45582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01A8B8C2256F35B00F45582 /* Main.storyboard */; };
 		D01A8B902256F35F00F45582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01A8B8F2256F35F00F45582 /* Assets.xcassets */; };
 		D01A8B932256F35F00F45582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01A8B912256F35F00F45582 /* LaunchScreen.storyboard */; };
+		D058A9B4225C32EB007DFCCB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058A9B3225C32EB007DFCCB /* Item.swift */; };
 		D0766B2C2256F44400D436F2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0766B2B2256F44400D436F2 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		D01A8B8F2256F35F00F45582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D01A8B922256F35F00F45582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D01A8B942256F35F00F45582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D058A9B3225C32EB007DFCCB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D0766B2B2256F44400D436F2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 			children = (
 				D01A8B882256F35B00F45582 /* AppDelegate.swift */,
 				D0766B2B2256F44400D436F2 /* ListViewController.swift */,
+				D058A9B3225C32EB007DFCCB /* Item.swift */,
 				D01A8B8C2256F35B00F45582 /* Main.storyboard */,
 				D01A8B8F2256F35F00F45582 /* Assets.xcassets */,
 				D01A8B912256F35F00F45582 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0766B2C2256F44400D436F2 /* ListViewController.swift in Sources */,
+				D058A9B4225C32EB007DFCCB /* Item.swift in Sources */,
 				D01A8B892256F35B00F45582 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
