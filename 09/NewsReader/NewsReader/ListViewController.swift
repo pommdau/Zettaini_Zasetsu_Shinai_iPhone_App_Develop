@@ -21,10 +21,10 @@ class ListViewController: UITableViewController, XMLParserDelegate {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
                                                  for: indexPath)
         cell.textLabel?.text = items[indexPath.row].title
-            return cell
+        return cell
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,17 +32,20 @@ class ListViewController: UITableViewController, XMLParserDelegate {
         startDownload()
     }
     
+    // RSSのダウンロード
     func startDownload() {
         self.items = []
         if let url = URL(string: "https://wired.jp/rssfeeder/") {
+            // 不正なURLの場合nilが返されるためOptional Bindingを使う
             if let parser = XMLParser(contentsOf: url) {
                 self.parser = parser
                 self.parser.delegate = self
-                self.parser.parse()
+                self.parser.parse() // データの解析を開始
             }
         }
     }
     
+    // 要素名の開始タグが見つかるごとに毎回呼び出されるメソッド
     func parser(_ parser: XMLParser,
                 didStartElement elementName: String,
                 namespaceURI: String?,
@@ -54,11 +57,13 @@ class ListViewController: UITableViewController, XMLParserDelegate {
         }
     }
     
+    // 内容が見つかったときに自動で呼ばれるメソッド
     func parser(_ parser: XMLParser,
                 foundCharacters string: String) {
         self.currentString += string
     }
     
+    // 要素名の終了タグが見つかる際に呼ばれるメソッド
     func parser(_ parser: XMLParser,
                 didEndElement elementName: String,
                 namespaceURI: String?,
@@ -67,14 +72,15 @@ class ListViewController: UITableViewController, XMLParserDelegate {
         case "title":
             self.item?.title = currentString
         case "link":
-            self.item?.link = currentString
+            self.item?.link  = currentString
         case "item":
-            self.items.append(self.item!)
+            self.items.append(self.item!)   // itemの場合、それが1つのニュース記事の終わりを意味する
         default:
             break
         }
     }
     
+    // すべてのデータの解析が終了すると自動的に呼ばれるメソッド
     func parserDidEndDocument(_ parser: XMLParser) {
         self.tableView.reloadData()
     }
