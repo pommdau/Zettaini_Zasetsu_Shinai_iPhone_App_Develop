@@ -1,7 +1,12 @@
 import UIKit
 
-var slider = UISlider()
+class Taiyaki {
+    var nakami = "あんこ"
+    func sayNakami() {
+        print("中身は" + nakami + "です。")
+    }
+}
 
-slider.value = 1.0
-
-slider.setValue(0.5, animated: true)
+var taiyaki = Taiyaki()
+taiyaki.nakami = "クリーム"
+taiyaki.sayNakami()
